@@ -22,9 +22,65 @@
 
 using namespace std;
 
+class Solution
+{
+    // 解法1: 快速选择
+public:
+    vector<int> res;
+    vector<int> getLeastNumbers(vector<int> &arr, int k)
+    {
+        // 快速选择,相当于一个“不完全”的快速排序
+        // 找前 K 大/前 K 小问题不需要对整个数组进行 O(NlogN) 的排序
+        // 直接通过快排切分排好第 K 小的数（下标为 K-1），
+        // 那么它左边的数就是比它小的另外 K-1 个数
+
+        if (arr.size() == 0 || k == 0)
+            return res;
+
+        return quickSelect(arr, 0, arr.size() - 1, k - 1);
+    }
+
+    vector<int> quickSelect(vector<int> &arr, int i, int j, int k)
+    {
+        int idx = partition(arr, i, j);
+        if (idx == k)
+        { // 若 j 刚好等于 k - 1，将 arr[0] 至 arr[j] 输入 res
+            for (int i = 0; i < k + 1; ++i)
+                res.push_back(arr[i]);
+            return res;
+        }
+        else if (idx < k)
+            return quickSelect(arr, idx + 1, j, k);
+        else
+            return quickSelect(arr, i, idx - 1, k);
+    }
+
+    int partition(vector<int> &arr, int left, int right)
+    {
+        // 将函数区间所有小于下标为j的数放在j的左侧，~放在j的右侧
+        // 和快速排序中partition一样
+        int val = arr[left]; // 最左边的数，基准数
+        while (left < right)
+        {
+            // 找到一个小于基准数的数
+            while (left < right && arr[right] >= val)
+                right--;
+            arr[left] = arr[right];
+            // 找到一个大于基准数的数
+            while (left < right && arr[left] <= val)
+                left++;
+            arr[right] = arr[left];
+        }
+        // left 左侧都比他小
+        arr[left] = val;
+        return left;
+    }
+};
+
+/*
 class Solution {
 public:
-    // priority
+    // 解法2: 大顶堆
     vector<int> getLeastNumbers(vector<int> &arr, int k) {
         vector<int> res(k);
         priority_queue<int> max_heap;
@@ -47,6 +103,7 @@ public:
         return res;
     }
 };
+*/
 
 // ACM 模式 输入一个一维vector
 template <typename T>
