@@ -4,7 +4,7 @@
 
 如果本仓库对你有任何帮助，请点🌟支持，谢谢！🙏
 
-**This Repositoriy [CodingInterviews](https://github.com/M3stark/CodingInterviews/) is build for reviewing  the CodingInterviews.**
+**This repository [CodingInterviews](https://github.com/M3stark/CodingInterviews/) is build for reviewing  the CodingInterviews.**
 
 **All code is ACM version.**
 
