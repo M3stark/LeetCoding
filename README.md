@@ -4,7 +4,7 @@
 
 如果本仓库对你有任何帮助，请点🌟支持，谢谢！🙏
 
-**This Repositoriy[CodingInterviews](https://github.com/M3stark/CodingInterviews/) is build for reviewing  the CodingInterviews.**
+**This Repositoriy [CodingInterviews](https://github.com/M3stark/CodingInterviews/) is build for reviewing  the CodingInterviews.**
 
 **All code is ACM version.**
 
@@ -14,9 +14,10 @@ If this work helped you, please 🌟 this repositoriy, THANK YOU! 🙏
 
 ## Updates
 
-  - 38. 字符串的排列.cpp
-  - 39. 数组中出现次数超过一半的数字.cpp
-  - 40. 最小的k个数.cpp
+>   - 38. 字符串的排列.cpp
+>   - 39. 数组中出现次数超过一半的数字.cpp
+>   - 40. 最小的k个数.cpp
+
 
 
 
