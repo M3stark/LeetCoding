@@ -6,7 +6,7 @@
 
 **This repository [CodingInterviews](https://github.com/M3stark/CodingInterviews/) is build for reviewing  the CodingInterviews.**
 
-**All code is ACM version.**
+**All code is ACM mode.**
 
 If this work helped you, please 🌟 this repositoriy, THANK YOU! 🙏
 
