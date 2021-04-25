@@ -2,6 +2,7 @@
     剑指 Offer 42. 连续子数组的最大和
     输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
     要求时间复杂度为O(n)。
+    难度： 简单
     https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/
 */
 
@@ -10,12 +11,13 @@
 
 using namespace std;
 
-/*
-    解法1: 贪心算法
-*/
+
 class Solution
 {
 public:
+    /*
+    解法1: 贪心算法
+    */
     int maxSubArray(vector<int> &nums)
     {
         int res = nums[0];
@@ -30,6 +32,23 @@ public:
         }
         return res;
     }
+
+    /*
+    解法2: 动态规划
+    */
+
+    /*
+    int maxSubArray(vector<int>& nums) {
+        int dp_0 = nums[0], dp_1 = 0, res = dp_0;
+
+        for(int i = 1; i < nums.size(); ++i) {
+            dp_1 = max(nums[i], nums[i]+dp_0);
+            dp_0 = dp_1;
+            res = res > dp_1 ? res : dp_1;
+        }
+        return res;
+    }
+    */
 };
 
 
@@ -53,10 +72,12 @@ int main()
     vector<int> tmp(n);
     cout << "请输入一个数组: ";
     fcin(tmp);
+    cout << "***********************************************" << endl;
 
     Solution a;
     int res = a.maxSubArray(tmp);
     cout << "连续子数组的最大和:" << res << endl;
+    cout << "***********************************************" << endl;
 
     return 0;
 }
