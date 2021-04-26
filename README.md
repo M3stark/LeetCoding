@@ -16,11 +16,11 @@ By the way, my Leetcode page is : [mikezheng](https://leetcode-cn.com/u/_codingm
 
 ## Updates
 ```
-  - 38. 字符串的排列.cpp
-  - 39. 数组中出现次数超过一半的数字.cpp
-  - 40. 最小的k个数.cpp
-  - 42. 连续子数组的最大和
-  - 43. 1～n 整数中 1 出现的次数
+  - 剑指 Offer 38. 字符串的排列.cpp
+  - 剑指 Offer 39. 数组中出现次数超过一半的数字.cpp
+  - 剑指 Offer 40. 最小的k个数.cpp
+  - 剑指 Offer 42. 连续子数组的最大和
+  - 剑指 Offer 43. 1～n 整数中 1 出现的次数
   -
   - 剑指 Offer 45. 把数组排成最小的数
   - 
