@@ -15,6 +15,7 @@ By the way, my Leetcode page is : [mikezheng](https://leetcode-cn.com/u/_codingm
 
 
 ## Updates
+- [剑指 Offer 38. 字符串的排列.cpp](https://github.com/M3stark/CodingInterviews/blob/main/src/38.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97.cpp)
 ```
   - [剑指 Offer 38. 字符串的排列.cpp](https://github.com/M3stark/CodingInterviews/blob/main/src/38.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97.cpp)
   - 剑指 Offer 39. 数组中出现次数超过一半的数字.cpp
