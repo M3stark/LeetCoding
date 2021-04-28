@@ -8,6 +8,13 @@
 #include <iostream>
 using namespace std;
 
+/*
+    Notes:
+        a && b，计算机会先判断 a 是否为 true，假如 a 为 true，那么计算机会接着运行 b 语句;
+        如果 b 为 true 那 a && b 为 true，否则为 false；
+        如果 a 为 false，那计算机会直接返回 a && b = false，而不会再去运行 b 语句了。
+*/
+
 class Solution
 {
 public:
