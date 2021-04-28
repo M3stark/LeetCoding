@@ -60,7 +60,6 @@ int main() {
     res = a.permutation(word);
     cout << "字符串的排列为：[";
     
-
     for (int i = 0; i < res.size() - 1; ++i)
     {
         cout << "'" << res[i] <<  "',";
@@ -69,5 +68,4 @@ int main() {
     cout << "***********************************************" << endl;
 
     return 0;
-
 }
