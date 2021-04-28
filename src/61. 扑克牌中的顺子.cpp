@@ -43,9 +43,6 @@ void fcin(vector<T>& v) {
     }
 }
 
-/*
-    g++ 61.\ 扑克牌中的顺子.cpp -o 61.o -std=c++11
-*/
 
 int main()
 {
