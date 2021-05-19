@@ -15,7 +15,9 @@
 
 using namespace std; // namespace std;
 
-
+/*  
+    方法1 哈希表  
+*/
 class Solution
 {
 public:
