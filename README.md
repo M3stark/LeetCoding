@@ -1,6 +1,6 @@
-# LeetCoing, Need Coding.
+# LeetCoding, Need Coding.
 
-*Leetcoing with me.*
+*Leetcoding with me.*
 
 **This repository [Leetcoing](https://github.com/M3stark/LeetCoding) is build for reviewing  the Leetcode. Basically  [CodingInterviews](https://github.com/M3stark/LeetCoding/tree/main/CodingInterviews)  and Hot🔥100 in Leetcode.**
 
