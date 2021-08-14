@@ -42,8 +42,10 @@ public:
         int dp_0 = nums[0], dp_1 = 0, res = dp_0;
 
         for(int i = 1; i < nums.size(); ++i) {
+            // 局部最大
             dp_1 = max(nums[i], nums[i]+dp_0);
             dp_0 = dp_1;
+            // 全局最大
             res = res > dp_1 ? res : dp_1;
         }
         return res;

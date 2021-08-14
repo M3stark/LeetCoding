@@ -6,6 +6,7 @@
 */
 
 #include <iostream>
+#include <vector>
 #include <string>
 
 using namespace std;
@@ -19,18 +20,21 @@ class Solution
 public:
     char firstUniqChar(string s)
     {
-        int a[26] = {};
-        for (char ch : s)
-            a[ch - 'a']++;
+        vector<int> dict(26, 0);
 
-        for (char c : s)
+        for (const char ch : s)
         {
-            if (a[c - 'a'] == 1)
+            dict[ch - 'a']++;
+        }
+
+        for (const char ch : s)
+        {
+            if (dict[ch - 'a'] == 1)
             {
-                return c;
-                break;
+                return ch;
             }
         }
+
         return ' ';
     }
 };

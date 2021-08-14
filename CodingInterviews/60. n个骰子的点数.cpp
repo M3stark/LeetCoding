@@ -9,9 +9,11 @@
 /*
     Notes:
     - 投掷 n 个骰子，一共会有 6 的 n 次方 种结果，且每种结果都是等可能事件。
-    - 投掷 n 个骰子，那么就会有 n 个面朝上，这 n 个朝上的面的点数之和 s 的最大值是 6n，最小值是 n。故投掷 n 个骰子，s 一共有 6n - n + 1 个可能的值。
+    - 投掷 n 个骰子，那么就会有 n 个面朝上，这 n 个朝上的面的点数之和 s 的最大值是 6n，
+      最小值是 n。故投掷 n 个骰子，s 一共有 6n - n + 1 个可能的值。
     - s 的每一个可能值的概率等于：这个值出现的次数（可表示为 #s，即 the number of s） / 6 的 n 次方。
 */
+
 
 /*
     解题思路
@@ -34,7 +36,7 @@ public:
     vector<double> dicesProbability(int n)
     {
         // 投掷 n 个骰子，s一共有 6n - n + 1 个可能的值
-        vector<double> res(n * 6 - n + 1);
+        vector<double> res(n * 6 - n + 1);  // 最小为n
         vector<vector<int> > dp(n + 1, vector<int>(6 * n + 1, 0));
 
         int row = dp.size(), col = dp[0].size();

@@ -10,12 +10,26 @@
 
 using namespace std;
 
+/*
+    假设当前存在 3 个数组 nums2, nums3, nums5 分别代表丑数序列从 1 开始分别乘以 2, 3, 5 的序列:
+    nums2 = {1*2, 2*2, 3*2, 4*2, 5*2, 6*2, 8*2...}
+    nums3 = {1*3, 2*3, 3*3, 4*3, 5*3, 6*3, 8*3...}
+    nums5 = {1*5, 2*5, 3*5, 4*5, 5*5, 6*5, 8*5...}
+
+    # 注意 7 不是丑数. 
+    # 2, 3, 5 这前 3 个丑数一定要乘以其它的丑数， 所得的结果才是新的丑数， 
+    所以上例中没有出现 7*2, 7*3, 7*5.
+    最终的丑数序列实际上就是这 3 个有序序列对的合并结果.
+*/
+
+// 动态规划
 class Solution
 {
 public:
     int nthUglyNumber(int n)
     {
         // Dynamic Programming
+        // dp[i] 代表第 i + 1 个丑数
         vector<int> dp(n + 1);
 
         // base case
@@ -42,6 +56,40 @@ public:
         return dp[n - 1];
     }
 };
+
+// 最小堆
+/*
+class Solution
+{
+public:
+    int nthUglyNumber(int n)
+    {
+        vector<int> nums{2, 3, 5};
+        unordered_set<long> uglySet;
+        priority_queue<long, vector<long>, greater<long>> uglyQue;
+        uglySet.insert(1);
+        uglyQue.push(1);
+        int ugly = 0;
+
+        for (int i = 0; i < n; ++i)
+        {
+            long tmp = uglyQue.top();
+            uglyQue.pop();
+            ugly = (int)tmp;
+            for (int num : nums)
+            {
+                long next = num * tmp;
+                if (uglySet.count(next) == 0)
+                {
+                    uglySet.insert(next);
+                    uglyQue.push(next);
+                }
+            }
+        }
+        return ugly;
+    }
+};
+*/
 
 int main()
 {

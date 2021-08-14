@@ -56,7 +56,7 @@ class Solution
 public:
     int lengthOfLongestSubstring(string s)
     {
-
+        // 哈希表记录每个字符的下一个索引
         map<char, int> mp;
         int res = 0, start = 0, end = 0;
         while (end < s.length())

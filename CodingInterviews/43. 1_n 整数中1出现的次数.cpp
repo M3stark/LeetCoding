@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution
 {
-public:
+public: 
     int countDigitOne(int n)
     {
         /*
@@ -32,7 +32,7 @@ public:
                 * 要考虑 base 和 l， base 和 h      
                 * 比如 312 中的 1， h = 3, l = 2, base = 10, X(i) = 1:
                     * 对于 l， 11， 12， 一共2个 (l个)
-                    * 对于 h， 和情况1一样，一共 h * base
+                    * 对于 h， 和情况1一样，一共 h * base (和301一样)
                     * 对于 X(i)， 就是1
                     * 加起来： l + h * base + 1
         */

@@ -19,43 +19,57 @@
 
 using namespace std;
 
+/*  二分法  */
 class Solution
 {
 public:
     int search(vector<int> &nums, int target)
     {
-        // 二分法
-        int left, right;    // target的左右边界
-        int i = 0, j = nums.size() - 1;   // 二分法的左右指针
-        if (nums.size() == 0) 
+        if (nums.empty())
             return 0;
+
+        int i = 0, j = nums.size() - 1; // 二分法的左右指针
 
         while (i <= j)
         { // 第一次二分法求出右边界
             int m = (i + j) >> 1;
             // 正是i = j 时的这最后这次循环，i又右移了一次使得i成为右边界
-            if (nums[m] <= target)
-                i = m + 1;
-            else
+            if (nums[m] < target) // target在 [m+1, j]中
+                i = m + 1;        // target在 [i, m-1]中
+            else if (nums[m] > target)
+            {
                 j = m - 1;
+            }
+            else
+            { // 查找右边界   (跳出时指向右边界)
+                i = m + 1;
+            }
         }
+
+        int right = i;
 
         // 如果j位置不是target，说明数组中无target，提前返回
         if (j >= 0 && nums[j] != target)
             return 0;
-        right = i;
 
         j = i, i = 0; // 重置左右指针；右指针重置为右边界，减少下次二分的区间
         while (i <= j)
         { // 第二次二分法求出左边界
             int m = (i + j) >> 1;
             // 正是i = j时的这最后这次循环，j又左移了一次使得j成为左边界
-            if (nums[m] >= target)
-                j = m - 1;
-            else
+            if (nums[m] < target)
                 i = m + 1;
+            else if (nums[m] > target)
+            {
+                j = m - 1;
+            }
+            else
+            { // 查找左边界
+                j = m - 1;
+            }
         }
-        left = j;
+
+        int left = j;
 
         return right - left - 1;
     }
