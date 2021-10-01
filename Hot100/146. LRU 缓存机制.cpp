@@ -39,8 +39,8 @@ private:
 public:
     LRUCache(int _capacity) : capacity(_capacity)
     {
-        head = new DoubleList(); // 虚拟头部
-        tail = new DoubleList(); // 虚拟尾部
+        head = new DoubleList();            // 虚拟头部
+        tail = new DoubleList();            // 虚拟尾部
         head->next = tail;
         tail->prev = head;
     }
@@ -73,31 +73,31 @@ public:
         {
             return -1;
         }
-        DoubleList *node = cache[_key]; // hash table 中找到这个 node
-        remove(node);                   // 删除此时的 node
-        add(node);                      // 更新到 DoubleList 尾部
+        DoubleList *node = cache[_key];         // hash table 中找到这个 node
+        remove(node);                           // 删除此时的 node
+        add(node);                              // 更新到 DoubleList 尾部
         return node->value;
     }
 
     void put(int _key, int _value)
     {
         if (cache.count(_key))
-        {                                   // 原来 key 已经有 node
-            DoubleList *node = cache[_key]; // hash table 中找到这个 node
-            remove(node);                   // 删除原有的 key 的 node
-            node->value = _value;           // 更新 这个 key 对应的 node
-            add(node);                      // 添加到 DoubleList 中
+        {                                       // 原来 key 已经有 node
+            DoubleList *node = cache[_key];     // hash table 中找到这个 node
+            remove(node);                       // 删除原有的 key 的 node
+            node->value = _value;               // 更新 这个 key 对应的 node
+            add(node);                          // 添加到 DoubleList 中
             return;
         }
         if (cache.size() == this->capacity)
         { // 缓存满了
             int removed = head->next->key;
-            remove(head->next);   // 头部是虚拟头部，所以删除头部的下一个
-            cache.erase(removed); // 在 cache 删除对应的 node
+            remove(head->next);                 // 头部是虚拟头部，所以删除头部的下一个
+            cache.erase(removed);               // 在 cache 删除对应的 node
         }
         DoubleList *node = new DoubleList(_key, _value);
-        add(node);          // 新 node 放在尾部
-        cache[_key] = node; // 更新 新node 到 hash table
+        add(node);                              // 新 node 放在尾部
+        cache[_key] = node;                     // 更新 新node 到 hash table
     }
 
     void add(DoubleList *node)
